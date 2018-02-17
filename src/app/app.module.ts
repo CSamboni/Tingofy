@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
@@ -11,25 +11,25 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
-import { HomeComponent } from './home/home.component';
+import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
-import { ChatComponent } from './chat/chat.component';
+import { HomeComponent } from './home/home.component';
+
+import { AutorizacionService } from './services/autorizacion.service';
+// import { MyGuard } from './services/my-guard.service';
 
 const appRoutes: Routes = [
-  {path:'', component: HomeComponent},
-  {path:'login', component: LoginComponent},
-  {path:'signup', component: SignupComponent},
-  {path:'chat', component: ChatComponent}
+  { path:'', component: LandingComponent, pathMatch: 'full' },
+  { path:'login', component: LoginComponent },
+  { path:'home', component: HomeComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponentComponent,
-    HomeComponent,
-    SignupComponent,
-    ChatComponent
+    LandingComponent,
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -41,9 +41,10 @@ const appRoutes: Routes = [
     AngularFireModule,
     AngularFirestoreModule,
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    ReactiveFormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ AutorizacionService ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

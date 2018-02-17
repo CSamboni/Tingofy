@@ -1,3 +1,19 @@
-<p>
-  login works!
-</p>
+<form class="log-in-form">
+  <h4 class="text-center">Log in</h4>
+  <label>Email
+    <input type="email" class="form-control" name="email" [(ngModel)]="loginParams.email" [ngModelOptions]="{standalone: true}">
+  </label>
+  <label>Password
+    <input type="password" class="form-control" name="passport" [(ngModel)]="loginParams.password" [ngModelOptions]="{standalone: true}">
+    <p class="text-center"><a href="#">Forgot your password?</a></p>
+  </label>
+  <hr>
+  <button type="submit" class="button expanded secondary" (click)="login()">Iniciar Sesión</button>
+  <button type="submit" class="button expanded primary" (click)="facebookLogin()">
+    Ingresa con facebook
+  </button>
+  <button type="submit" class="button expanded primary" (click)="googleLogin()">
+    Ingresa con Google
+  </button>
+  <button type="submit" class="button expanded alert" routerLink="/">Cancelar</button>
+</form>

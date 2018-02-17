@@ -1,0 +1,265 @@
+// Imports
+@import '../../../node_modules/foundation-sites/scss/foundation';
+
+// hero
+$marketing-site-hero-height: 65vh;
+
+.marketing-site-hero {
+  background: url('https://wallpaperscraft.com/image/usa_new_york_top_view_skyscrapers_112139_2560x1440.jpg') top right no-repeat;
+  height: $marketing-site-hero-height;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+
+  @media screen and (min-width: 40em) {
+    background-position: center center;
+  }
+}
+
+.marketing-site-hero-content {
+  max-width: $global-width;
+  margin: 0 auto;
+  padding-left: 5%;
+  padding-right: 5%;
+
+  h1 {
+    font-size: 32px;
+    color: white;
+  }
+
+  p {
+    color: white;
+  }
+
+  .button.round {
+    border-radius: 5000px;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 40em) {
+    padding-left: 50%;
+  }
+}
+
+// features
+.marketing-site-content-section {
+  display: flex;
+  flex-wrap: wrap;
+
+  .button.round {
+    border-radius: 5000px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+
+  .marketing-site-content-section-img {
+    align-self: center;
+    flex: 1 0 100%;
+
+    img {
+      width: 100%;
+    }
+
+    @media screen and (min-width: 40em) {
+      flex: 1 0 50%;
+    }
+  }
+
+  .marketing-site-content-section-block {
+    padding: 1rem;
+    flex: 1 0 100%;
+    align-self: stretch;
+    background: $light-gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    @media screen and (min-width: 40em) {
+      flex: 1 0 50%;
+      padding: 2rem;
+    }
+  }
+}
+
+.marketing-site-content-section-block-header {
+  font-size: 24px;
+}
+
+.marketing-site-content-section-block-subheader {
+  font-size: 13px;
+}
+
+// the best
+.marketing-site-features {
+  text-align: center;
+  padding: 2rem 0;
+
+  .fa {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: $primary-color;
+  }
+
+  .marketing-site-features-title {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+
+  @media screen and (min-width: 40em) {
+    text-align: left;
+  }
+}
+
+.marketing-site-features-headline {
+  text-align: center;
+  font-size: 24px;
+}
+
+.marketing-site-features-subheadline {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+// footer
+#engadget-footer-sitemap-container {
+ max-width: 100%;
+ width: 100%;
+ margin: 0 auto;
+ margin-top: rem-calc(0);
+ background-color: $black;
+
+   #engadget-footer-sitemap {
+     @include grid-row();
+     color:$light-gray;
+     padding: rem-calc(60) 0;
+     a {
+       color:$light-gray !important;
+       }
+   .links {
+     @include breakpoint(small) {
+       @include grid-layout(2, '.link-column', $grid-column-gutter);
+       }
+     @include breakpoint(large) {
+       @include grid-layout(4, '.link-column', $grid-column-gutter);
+       }
+
+     .link-column:not(:last-child) {
+     border-right:1px solid $light-gray
+     }
+   }
+ }
+}
+#engadget-footer-social-container {
+ max-width: 100%;
+ width: 100%;
+ margin: 0 auto;
+ margin-top: rem-calc(0);
+ background-color: $dark-gray;
+
+ #engadget-footer-social {
+   @include grid-row();
+   color:$light-gray;
+   padding: rem-calc(60) 0;
+   a {
+     color:$light-gray !important;
+     }
+   .footer-left {
+     @include breakpoint(small) {
+       @include grid-column(12);
+     }
+     @include breakpoint(medium) {
+       @include grid-column(6);
+     }
+     @include breakpoint(large) {
+       @include grid-column(5);
+     }
+     .input-group-field {
+       background: $white
+     }
+   }
+
+   .footer-right {
+     text-align: right;
+     @include breakpoint(small) {
+       @include grid-column(12);
+     }
+     @include breakpoint(medium) {
+       @include grid-column(6);
+     }
+   }
+   .fa {
+     padding: 0 0 0 0.6rem;
+     }
+   h2 {
+     color: $white;
+     }
+   p {
+     font-size: 0.8rem;
+     margin-bottom: 0;
+   }
+ }
+}
+
+#engadget-footer-contact-details-container {
+ max-width: 100%;
+ width: 100%;
+ margin: 0 auto;
+ margin-top: rem-calc(0);
+ background-color: $white;
+
+ #engadget-footer-contact-details {
+   @include grid-row();
+   color:$dark-gray;
+   padding: rem-calc(20) 0;
+   a {
+     color:$dark-gray !important;
+     }
+
+   .footer-left {
+   @include breakpoint(small) {
+   @include grid-column(12);
+   li {
+     display: block;
+     }
+   text-align: center;
+   }
+   @include breakpoint(medium) {
+   @include grid-column(6);
+   text-align: left;
+   }
+    @include breakpoint(large) {
+    @include grid-column(8);
+    ul {
+      margin-bottom: 0;
+      }
+   li {
+     display: inline-block
+     }
+   }
+   font-size: 0.9rem;
+   .fa {
+     padding: 0 0.4rem;
+     }
+ }
+ .footer-right {
+   @include breakpoint(small) {
+   @include hide-for-only(small);
+   }
+   @include breakpoint(medium) {
+   @include grid-column(6);
+   }
+    @include breakpoint(large) {
+    @include grid-column(4);
+    text-align: right;
+    ul {padding-top: 1.6rem;}
+
+
+   }
+   font-size: 0.9rem;
+   .fa {padding: 0 0.4rem;}
+   }
+ }
+}

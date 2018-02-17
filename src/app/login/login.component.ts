@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { AutorizacionService } from '../services/autorizacion.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+export class LoginComponent {
+  loginParams:any = {};
+  constructor(private autorizacionService: AutorizacionService) {}
+  login(){
+    this.autorizacionService.login(this.loginParams.email, this.loginParams.password);
   }
-
+  facebookLogin(){
+    this.autorizacionService.facebookLogin()
+  }
+  googleLogin(){
+    this.autorizacionService.googleLogin()
+  }
 }
