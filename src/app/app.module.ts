@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -16,11 +17,20 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 
 import { AutorizacionService } from './services/autorizacion.service';
+import { SignupComponent } from './signup/signup.component';
 // import { MyGuard } from './services/my-guard.service';
+
+// Material Angular components
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
 
 const appRoutes: Routes = [
   { path:'', component: LandingComponent, pathMatch: 'full' },
   { path:'login', component: LoginComponent },
+  { path:'signup', component: SignupComponent },
   { path:'home', component: HomeComponent }
 ];
 
@@ -29,12 +39,14 @@ const appRoutes: Routes = [
     AppComponent,
     LandingComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    ReactiveFormsModule,
     // Firebase
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(environment.firebase, 'talkiefy'),
@@ -42,7 +54,13 @@ const appRoutes: Routes = [
     AngularFirestoreModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    ReactiveFormsModule
+    // Material Angular
+    MatSnackBarModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatInputModule,
+    MatMenuModule
   ],
   providers: [ AutorizacionService ],
   bootstrap: [ AppComponent ]

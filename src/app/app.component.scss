@@ -1,12 +1,49 @@
 // nav
 .top-bar {
-  background-color: #44444e;
+  background-color: #5e35b1;
+  position: static;
+  display: flex;
+  width: 100%;
 
   .menu {
-    background-color: #44444e;
+    background-color: #5e35b1;
+
+    .menu-links {
+      font-family: 'Open Sans', sans-serif;
+      color: white !important;
+      font-size: 1.2em;
+    }
+
+    li {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
   }
 
   .menu-text {
     color: #fff;
   }
+
+  .menu-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+}
+
+.padding {
+  padding-left: 3em;
+  padding-right: 3em;
+}
+
+.button.round {
+  background-color: #ff4081;
+  font-size: 1.2em;
+  margin-bottom: 0;
+}
+
+.user-icon {
+  color: white;
+  font-size: 2em;
 }
