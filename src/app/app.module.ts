@@ -17,6 +17,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 
 import { AutorizacionService } from './services/autorizacion.service';
+import { UsersService } from './services/users.service';
 import { SignupComponent } from './signup/signup.component';
 // import { MyGuard } from './services/my-guard.service';
 
@@ -62,7 +63,7 @@ const appRoutes: Routes = [
     MatInputModule,
     MatMenuModule
   ],
-  providers: [ AutorizacionService ],
+  providers: [ AutorizacionService, UsersService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

@@ -10,12 +10,6 @@ export class SignupComponent {
   registro:any = {};
   constructor(private autorizacionService: AutorizacionService) {}
   signup(){
-    this.autorizacionService.registro(this.registro.email, this.registro.password);
-  }
-  facebookLogin(){
-    this.autorizacionService.facebookLogin()
-  }
-  googleLogin(){
-    this.autorizacionService.googleLogin()
+    this.autorizacionService.registro(this.registro.username, this.registro.email, this.registro.password);
   }
 }

@@ -16,7 +16,7 @@ export class AppComponent {
         if(result && result.uid) {
           this.loggedIn = true
           setTimeout(()=>{
-            this.loggedUser = this.autorizacionService.getUser().currentUser.displayName
+            this.loggedUser = this.autorizacionService.getUser().currentUser.email
           }, 500)
         } else {
           this.loggedIn = false
