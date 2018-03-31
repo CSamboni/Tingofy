@@ -8,10 +8,14 @@ import { UsersService } from '../services/users.service';
 })
 export class HomeComponent {
   users = null;
+  lessons = null;
 
-  constructor(private UsersService: UsersService) {
-    UsersService.getUsers().valueChanges().subscribe(users => {
+  constructor(private service: UsersService) {
+    service.getUsers().valueChanges().subscribe(users => {
       this.users = users;
-    })
+    });
+    service.getLessons().valueChanges().subscribe(lessons => {
+      this.lessons = lessons;
+    });
   }
 }

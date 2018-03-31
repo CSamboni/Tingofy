@@ -1,17 +1,21 @@
-// nav
+@import '../assets/foundation-sites/variables';
+
+// ================================= nav =======================================
 .top-bar {
-  background-color: #5e35b1;
+  background-color: $color-white;
   position: static;
   display: flex;
   width: 100%;
 
   .menu {
-    background-color: #5e35b1;
+    background-color: $color-white;
 
     .menu-links {
-      font-family: 'Open Sans', sans-serif;
-      color: white !important;
-      font-size: 1.2em;
+      font-family: $roboto;
+      color: $color-gray !important;
+      text-transform: capitalize;
+      font-weight: light;
+      font-size: 1em;
     }
 
     li {
@@ -22,11 +26,11 @@
   }
 
   .menu-text {
-    color: #fff;
+    color: $color-dark;
   }
 
   .menu-logo {
-    font-family: 'Montserrat', sans-serif;
+    font-family: $montserrat;
     font-size: 1.2em;
     letter-spacing: 5px;
     text-transform: uppercase;
@@ -39,13 +43,36 @@
   padding-right: 3em;
 }
 
-.button.round {
-  background-color: #ff4081;
-  font-size: 1.2em;
+// buttons
+.button {
   margin-bottom: 0;
+  font-family: $roboto;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.button-login {
+  background-color: transparent;
+  border: 3px solid $color-teal;
+  color: $color-teal;
+  margin-right: 10px;
+  transition: .5s ease;
+
+  &:hover {
+    background-color: $color-teal;
+    color: white;
+  }
+}
+
+.button-signup {
+  background-color: $color-teal;
+
+  &:hover {
+    background-color: $dark-teal;
+  }
 }
 
 .user-icon {
-  color: white;
+  color: gray;
   font-size: 2em;
 }

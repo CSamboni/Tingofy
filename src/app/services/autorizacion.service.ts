@@ -15,7 +15,7 @@ export class AutorizacionService {
 
   constructor (private angularFireAuth: AngularFireAuth, private db: AngularFireDatabase,
     private router: Router, public snackbar: MatSnackBar) {
-      this.isLogged()
+      this.isLogged();
       this.user = angularFireAuth.authState;
   }
 
@@ -57,45 +57,45 @@ export class AutorizacionService {
 
   public login = (email, password) => {
     this.angularFireAuth.auth.signInWithEmailAndPassword(email, password)
-      .then((user)=> {
+      .then((user) => {
         this.authState = user;
         this.setUserStatus('online');
 
-        this.openSnackBar('Signin','Success')
-        this.router.navigate(['home'])
-      }) .catch((error)=>{
-        console.log(error)
-        this.openSnackBar(`Ops.. ${error}`, 'Error')
-      })
+        this.openSnackBar('Signin', 'Success');
+        this.router.navigate(['home']);
+      }) .catch((error) => {
+        console.log(error);
+        this.openSnackBar(`Ops.. ${error}`, 'Error');
+      });
   }
 
   public registro = (username, email, password) => {
     this.angularFireAuth.auth.createUserWithEmailAndPassword(email, password)
-      .then((user)=> {
+      .then((user) => {
         this.authState = user;
         const status = 'online';
         this.setUserData(email, username, status);
 
-        this.openSnackBar('Signup','Success')
-        this.router.navigate(['home'])
-      }) .catch((error)=>{
-        console.log(error)
-        this.openSnackBar(`Ops.. ${error}`, 'Error')
-      })
+        this.openSnackBar('Signup', 'Success');
+        this.router.navigate(['home']);
+      }) .catch((error) => {
+        console.log(error);
+        this.openSnackBar(`Ops.. ${error}`, 'Error');
+      });
   }
 
-  public isLogged(){
-    return this.angularFireAuth.authState
+  public isLogged() {
+    return this.angularFireAuth.authState;
   }
 
-  public logout(){
+  public logout() {
     this.setUserStatus('offline');
-    this.angularFireAuth.auth.signOut()
-    this.openSnackBar('Logout', 'Success')
-    this.router.navigate([''])
+    this.angularFireAuth.auth.signOut();
+    this.openSnackBar('Logout', 'Success');
+    this.router.navigate(['']);
   }
 
-  public getUser(){
+  public getUser() {
     return this.angularFireAuth.auth;
   }
 

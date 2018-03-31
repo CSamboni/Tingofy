@@ -19,7 +19,9 @@ import { HomeComponent } from './home/home.component';
 import { AutorizacionService } from './services/autorizacion.service';
 import { UsersService } from './services/users.service';
 import { SignupComponent } from './signup/signup.component';
-// import { MyGuard } from './services/my-guard.service';
+import { AdminComponent } from './admin/admin.component';
+import { LessonComponent } from './lesson/lesson.component';
+import { MyGuard } from './services/my-guard.service';
 
 // Material Angular components
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -27,12 +29,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 
 const appRoutes: Routes = [
-  { path:'', component: LandingComponent, pathMatch: 'full' },
-  { path:'login', component: LoginComponent },
-  { path:'signup', component: SignupComponent },
-  { path:'home', component: HomeComponent }
+  { path: '', component: LandingComponent, pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'home', component: HomeComponent, canActivate: [MyGuard] },
+  { path: 'admin', component: AdminComponent, canActivate: [MyGuard] },
+  { path: 'lesson/:id', component: LessonComponent, canActivate: [MyGuard] }
 ];
 
 @NgModule({
@@ -41,7 +46,9 @@ const appRoutes: Routes = [
     LandingComponent,
     LoginComponent,
     HomeComponent,
-    SignupComponent
+    SignupComponent,
+    AdminComponent,
+    LessonComponent
   ],
   imports: [
     BrowserModule,
@@ -61,9 +68,10 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatButtonModule,
     MatInputModule,
-    MatMenuModule
+    MatMenuModule,
+    MatIconModule
   ],
-  providers: [ AutorizacionService, UsersService ],
+  providers: [ AutorizacionService, UsersService, MyGuard ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

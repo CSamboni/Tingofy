@@ -1,0 +1,10 @@
+<div class="container pad-3">
+  <label class="col-form-label">Name</label>
+  <input type="text" class="form-control" [(ngModel)]="lesson.name"/>
+  <hr>
+  <label class="col-form-label">Description</label>
+  <input type="text" class="form-control" [(ngModel)]="lesson.description"/>
+  <hr>
+  <button class="button primary" (click)="saveLesson()">Enviar</button>
+  <button class="button alert" routerLink="/home">Cancelar</button>
+</div>

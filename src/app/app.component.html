@@ -10,13 +10,15 @@
   </div>
   <div class="top-bar-right">
     <ul class="menu" *ngIf="!loggedIn">
-      <li><a routerLink="/login" class="menu-links">Login</a></li>
-      <button mat-raised-button color="accent" class="round button" routerLink="/signup">Signup</button>
+      <li><a routerLink="/login" class="button button-login">Login</a></li>
+      <button class="round button button-signup" routerLink="/signup">Signup</button>
     </ul>
 
     <ul class="menu" *ngIf="loggedIn">
       <!-- <li *ngIf="loggedUser"><a>{{_autorizacionService.email}}</a></li> -->
-      <button mat-button [matMenuTriggerFor]="menu"><i class="fas fa-user-circle user-icon"></i></button>
+      <button mat-button [matMenuTriggerFor]="menu">
+        <i class="material-icons user-icon">account_circle</i>
+      </button>
       <mat-menu #menu="matMenu">
         <button mat-menu-item>{{loggedUser}}</button>
         <button mat-menu-item (click)="logout()">Logout</button>

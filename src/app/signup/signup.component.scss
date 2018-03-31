@@ -1,12 +1,11 @@
 // Imports
 @import '../../../node_modules/foundation-sites/scss/foundation';
+@import '../../assets/foundation-sites/variables';
 @include foundation-everything($prototype: true);
 
-$sans: 'Open Sans', sans-serif;
-$mont: 'Montserrat', sans-serif;
 
 .container {
-  background-color: #e2e4e6 !important;
+  // background-color: #e2e4e6 !important;
 }
 
 form {
@@ -14,7 +13,7 @@ form {
 
   h4 {
     text-transform: uppercase;
-    font-family: $mont;
+    font-family: $montserrat;
     font-weight: bold;
     letter-spacing: 2px;
     font-size: 1.2em;
@@ -22,41 +21,38 @@ form {
 
   label {
     text-transform: uppercase;
-    font-family: $mont;
+    font-family: $montserrat;
     letter-spacing: 2px;
     font-size: .8em;
   }
 
   p {
-    font-family: $sans;
+    font-family: $roboto;
   }
 
   button {
-    font-family: $sans;
+    font-family: $roboto;
     font-size: 1em;
   }
 }
 
 // ================= botones personalizados =====================================
-.gradient {
-  background: #5e35b1;
-  background: linear-gradient(to left, #7c1599, #7e4ae8);
-}
+.login {
+  background: $color-purple;
 
-.facebook {
-  background: #3b5998;
-}
-
-.google {
-  background: #4885ed;
+  &:hover {
+    transition: 0.3s all ease;
+    background-color: $deep-purple;
+  }
 }
 
 .cancel {
-  background: #e53935;
-}
+  background: $alert;
 
-.cancel:hover {
-  background: #c62828;
+  &:hover {
+    transition: 0.3s all ease;
+    background: $dark-alert;
+  }
 }
 
 .log-in-form {
@@ -70,5 +66,5 @@ form {
 }
 
 [type=email]:focus, [type=password]:focus {
-  border: 2px solid #5e35b1;
+  border: 2px solid $color-purple;
 }

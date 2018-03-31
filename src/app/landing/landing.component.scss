@@ -1,21 +1,16 @@
 // Imports
 @import '../../../node_modules/foundation-sites/scss/foundation';
+@import '../../assets/foundation-sites/variables';
 @include foundation-everything($prototype: true);
 
-$marketing-site-hero-height: 65vh;
-$sans: 'Open Sans', sans-serif;
-$mont: 'Montserrat', sans-serif;
-
-// body
-body {
-  font-family: $sans;
-}
+$hero-height: 65vh;
 
 // ============================== hero ===========================================
 
-.marketing-site-hero {
-  background: url('../../assets/images/earth.jpg');
-  // background-size: cover;
+.hero {
+  background: url('../../assets/images/bgg.jpg');
+  background-attachment: fixed;
+  background-size: cover;
   height: calc(100vh - 57.38px);
   display: flex;
   align-items: center;
@@ -25,27 +20,27 @@ body {
   }
 }
 
-.marketing-site-hero-content {
+.hero-content {
   max-width: $global-width;
   margin: 0 auto;
   text-align: center;
   align-items: center;
 
   h1 {
-    font-family: $mont;
+    font-family: $montserrat;
     font-size: 2em;
     color: white;
   }
+}
 
-  .button.round {
-    border-radius: 5000px;
-    background-color: #ff4081;
-    font-size: 1.2em;
-    margin-bottom: 0;
-  }
-  .button.round:hover {
-    background-color: #f50057;
-  }
+.button.round {
+  border-radius: 5000px;
+  background-color: $pink;
+  font-size: 1.2em;
+  margin-bottom: 0;
+}
+.button.round:hover {
+  background-color: $dark-pink;
 }
 
 // ============================== features ===========================================
@@ -55,26 +50,21 @@ body {
   background-color: whitesmoke;
   padding: 3em;
 
-  img {
-    border-radius: 10%;
-  }
-
   h4 {
-    font-family: $mont;
-    color: #333;
+    margin-top: .5em;
+    font-family: $montserrat;
+    font-weight: bold;
+    color: $color-dark;
   }
 
   p {
-    font-family: $sans;
-    color: #333;
+    font-family: $roboto;
+    color: gray;
   }
-}
 
-.icons {
-  font-size: 4em;
-  align-items: center;
-  padding: 10px;
-  color: #f50057;
+  .icons {
+    width: 120px;
+  }
 }
 
 // ============================== devices ===========================================
@@ -84,20 +74,21 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: white;
 
   .devices-hero-description {
     flex-direction: column;
     padding: 4em;
 
     h3 {
-      font-family: $mont;
+      font-family: $montserrat;
       font-weight: bold;
-      color: #333;
+      color: $color-gray;
     }
 
     p {
-      font-family: $sans;
-      color: #333;
+      font-family: $roboto;
+      color: gray;
     }
   }
 
@@ -105,9 +96,20 @@ body {
     flex-direction: row;
 
     button {
-      font-family: $sans;
-      font-size: 1.2em;
+      font-family: $roboto;
+      font-size: 1em;
+      // font-weight: bold;
+      background-color: transparent;
+      border-radius: 5000px;
+      border: 3px solid $color-teal;
+      color: $color-teal;
       margin-right: 10px;
+
+      &:hover {
+        color: white;
+        background-color: $color-teal;
+        transition: all 0.5s ease;
+      }
     }
   }
 }
@@ -124,12 +126,15 @@ body {
 .upgrade-hero {
   padding: 3em;
   background: url('../../assets/images/spacex.png');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .pricing-table {
   background-color: $white;
   border: solid 1px $medium-gray;
-  font-family: $sans;
+  font-family: $roboto;
   border-radius: 10px;
   width: 100%;
   text-align: center;
@@ -153,26 +158,30 @@ body {
 
   .price {
     background-color: $light-gray;
-    font-family: $mont;
+    font-family: $montserrat;
     font-size: 2rem;
     border-bottom: 0;
   }
 
   .description {
     color: $dark-gray;
-    font-family: $sans;
+    font-family: $roboto;
     font-size: $small-font-size;
   }
 
   :last-child {
     margin-bottom: 0;
   }
+
+  .button {
+    font-size: 1em !important;
+  }
 }
 
 // ================================ footer ========================================
 
 .ecommerce-footer {
-  background-color: $white;
+  background-color: $color-dark;
   padding: 70px 20px 40px 20px;
 }
 
@@ -181,8 +190,8 @@ body {
   padding-right: 10em;
 
   h5 {
-    color: $black;
-    font-family: $mont;
+    color: $color-lightgray;
+    font-family: $montserrat;
     font-size: 1.2rem;
     font-weight: 600;
   }
@@ -193,15 +202,15 @@ body {
   }
 
   a {
-    color: lighten($black, 40%);
+    color: gray;
     font-size: 1rem;
-    font-family: $sans;
+    font-family: $roboto;
     transition: all 0.5s ease;
   }
 
   a:hover {
-    color: $black;
-    transition: all 0.5s ease;
+    color: $color-lightblue;
+    transition: all 0.3s ease;
   }
 
   .more-categories {
@@ -222,8 +231,8 @@ body {
 
 footer {
   text-align: center;
-  font-family: $sans;
+  font-family: $roboto;
   padding: 3em;
-  color: #333;
-  background-color: whitesmoke;
+  color: $color-lightgray;
+  background-color: $color-dark;
 }

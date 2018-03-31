@@ -7,9 +7,9 @@ import { AutorizacionService } from '../services/autorizacion.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  loginParams:any = {};
+  loginParams: any = {};
   constructor(private autorizacionService: AutorizacionService) {}
-  login(){
+  login() {
     this.autorizacionService.login(this.loginParams.email, this.loginParams.password);
   }
   // facebookLogin(){

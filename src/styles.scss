@@ -6,7 +6,13 @@
  * Licensed under MIT Open Source
  */
 // Angular Material
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+// Material Icons
+@import '../node_modules/material-design-icons/iconfont/material-icons.css';
+
+// Colors Palette
+@import 'assets/foundation-sites/variables';
 
 // Dependencies
 @import '../node_modules/foundation-sites/_vendor/normalize-scss/sass/normalize';
@@ -136,3 +142,7 @@
 }
 
 @include foundation-everything(true);
+
+body {
+  background-color: whitesmoke;
+}

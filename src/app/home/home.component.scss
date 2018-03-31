@@ -1,8 +1,37 @@
-.border {
-  border: 1px solid red;
+@import '../../assets/foundation-sites/variables';
+
+// Utilities
+.pad-1 {
+  padding: 1em !important;
 }
 
 .scroll {
   height: calc(100vh - 57.38px);
   overflow-y: scroll;
+}
+
+ul {
+  margin-left: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.user {
+  border-bottom: 1px solid #e0e0e0;
+  list-style: none;
+  text-transform: capitalize;
+
+  .user-avatar {
+    max-width: 40px;
+    margin: 10px;
+  }
+}
+
+.online {
+  padding: 5px;
+  height: 5px;
+  width: 5px;
+  border-radius: 5px;
+  background-color: $color-teal;
+  margin-left: 10px;
+  display: inline-block;
 }
