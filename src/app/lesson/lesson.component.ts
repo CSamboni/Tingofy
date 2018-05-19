@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../services/users.service';
 import { ActivatedRoute } from '@angular/router';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-lesson',
@@ -10,7 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 export class LessonComponent implements OnInit {
   lesson: any = {};
   id: any = null;
-  constructor(private service: UsersService, private route: ActivatedRoute) {
+  constructor(private service: UsersService, private route: ActivatedRoute,
+    private sanitizer: DomSanitizer) {
     this.id = this.route.snapshot.params['id'];
     if (this.id !== 'new') {
       this.service.getLesson(this.id)

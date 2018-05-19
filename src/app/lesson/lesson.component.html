@@ -1,4 +1,27 @@
-<div class="container pad-3">
-  <h4>{{ lesson.name }}</h4>
-  <p>{{ lesson.description }}</p>
+<!-- Header -->
+<div class="pad-3">
+  <div class="grid-x">
+    <div class="cell small-12 large-6 box-header">
+      <small>Begineer</small>
+      <!-- <p>{{ lesson.level }}</p> -->
+      <h3>{{ lesson.name }}</h3>
+      <p>{{ lesson.description }}</p>
+      <img src="../../assets/images/monuments/puerta-de-brandenburgo.svg" width="60" alt="Lesson Flag">
+    </div>
+    <div class="cell small-12 large-6 box-header-right">
+      <img src="{{ lesson.image }}" alt="Lesson Image">
+    </div>
+  </div>
 </div>
+
+<hr>
+
+<div class="container">
+  <div class="item"></div>
+  <div [innerHTML]="lesson.body | mdToHtml" class="item item__lesson"></div>
+  <div class="item"></div>
+</div>
+
+<h4 class="extra-title">video compliment</h4>
+<iframe [src]='lesson.extraSrc | safe' frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<!-- this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.src); -->

@@ -1,10 +1,30 @@
 <div class="container pad-3">
-  <label class="col-form-label">Name</label>
-  <input type="text" class="form-control" [(ngModel)]="lesson.name"/>
+  <div class="header">
+    <h4>Header</h4>
+    <label class="col-form-label">Name</label>
+    <input type="text" class="form-control" [(ngModel)]="lesson.name"/>
+    <label class="col-form-label">Description</label>
+    <input type="text" class="form-control" [(ngModel)]="lesson.description"/>
+    <label class="col-form-label">Image source</label>
+    <input type="text" class="form-control" [(ngModel)]="lesson.image"/>
+  </div>
   <hr>
-  <label class="col-form-label">Description</label>
-  <input type="text" class="form-control" [(ngModel)]="lesson.description"/>
+  <div class="body">
+    <h4>Words</h4>
+    <!-- Ver, Escuchar, Asociar! -->
+    <!-- icono, palabra a aprender, traduccion, pronunciacion, escuchar. -->
+    <div class="clarification">
+      <label class="col-form-label">Body</label>
+      <textarea name="name" rows="8" cols="50" [(ngModel)]="lesson.body"></textarea>
+    </div>
   <hr>
-  <button class="button primary" (click)="saveLesson()">Enviar</button>
-  <button class="button alert" routerLink="/home">Cancelar</button>
+  <div class="complement">
+    <h4>Sentences</h4>
+    <div class="video-extra">
+      <label class="col-form-label">Link src iframe</label>
+      <input type="text" class="form-control" [(ngModel)]="lesson.extraSrc"/>
+    </div>
+  </div>
+  <hr>
+  <button class="button primary expanded medium" (click)="saveLesson()">Enviar</button>
 </div>

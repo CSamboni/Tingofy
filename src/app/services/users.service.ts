@@ -2,9 +2,12 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database/database';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
+
+import * as marked from 'marked';
+
 @Injectable()
 export class UsersService {
-  API_ENDPOINT = 'https://talkiefy.firebaseio.com';
+  API_ENDPOINT = 'https://tingofy.firebaseio.com';
   users: any = [];
   lessons: any = [];
 
@@ -20,5 +23,9 @@ export class UsersService {
   }
   public getLesson(id) {
     return this.afDB.object('lessons/' + id);
+  }
+  // convert markdown string to
+  public markdownToHtml(md: string) {
+    return marked(md);
   }
 }

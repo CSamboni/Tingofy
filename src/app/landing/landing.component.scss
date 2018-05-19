@@ -1,6 +1,6 @@
 // Imports
 @import '../../../node_modules/foundation-sites/scss/foundation';
-@import '../../assets/foundation-sites/variables';
+@import "~assets/foundation-sites/variables";
 @include foundation-everything($prototype: true);
 
 $hero-height: 65vh;
@@ -27,7 +27,7 @@ $hero-height: 65vh;
   align-items: center;
 
   h1 {
-    font-family: $montserrat;
+    font-family: $quicksand;
     font-size: 2em;
     color: white;
   }
@@ -52,7 +52,7 @@ $hero-height: 65vh;
 
   h4 {
     margin-top: .5em;
-    font-family: $montserrat;
+    font-family: $quicksand;
     font-weight: bold;
     color: $color-dark;
   }
@@ -81,7 +81,7 @@ $hero-height: 65vh;
     padding: 4em;
 
     h3 {
-      font-family: $montserrat;
+      font-family: $quicksand;
       font-weight: bold;
       color: $color-gray;
     }
@@ -158,7 +158,7 @@ $hero-height: 65vh;
 
   .price {
     background-color: $light-gray;
-    font-family: $montserrat;
+    font-family: $quicksand;
     font-size: 2rem;
     border-bottom: 0;
   }
@@ -191,7 +191,7 @@ $hero-height: 65vh;
 
   h5 {
     color: $color-lightgray;
-    font-family: $montserrat;
+    font-family: $quicksand;
     font-size: 1.2rem;
     font-weight: 600;
   }

@@ -1,4 +1,4 @@
-@import '../assets/foundation-sites/variables';
+@import "~assets/foundation-sites/variables";
 
 // ================================= nav =======================================
 .top-bar {
@@ -30,7 +30,7 @@
   }
 
   .menu-logo {
-    font-family: $montserrat;
+    font-family: $quicksand;
     font-size: 1.2em;
     letter-spacing: 5px;
     text-transform: uppercase;

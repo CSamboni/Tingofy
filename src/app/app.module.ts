@@ -15,12 +15,14 @@ import { environment } from '../environments/environment';
 import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-
-import { AutorizacionService } from './services/autorizacion.service';
-import { UsersService } from './services/users.service';
 import { SignupComponent } from './signup/signup.component';
 import { AdminComponent } from './admin/admin.component';
 import { LessonComponent } from './lesson/lesson.component';
+import { SafePipe } from './pipe/safe.pipe';
+import { MdToHtmlPipe } from './pipe/md-to-html.pipe';
+
+import { AutorizacionService } from './services/autorizacion.service';
+import { UsersService } from './services/users.service';
 import { MyGuard } from './services/my-guard.service';
 
 // Material Angular components
@@ -36,7 +38,7 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'home', component: HomeComponent, canActivate: [MyGuard] },
-  { path: 'admin', component: AdminComponent, canActivate: [MyGuard] },
+  { path: 'admin', component: AdminComponent },
   { path: 'lesson/:id', component: LessonComponent, canActivate: [MyGuard] }
 ];
 
@@ -48,7 +50,9 @@ const appRoutes: Routes = [
     HomeComponent,
     SignupComponent,
     AdminComponent,
-    LessonComponent
+    LessonComponent,
+    SafePipe,
+    MdToHtmlPipe
   ],
   imports: [
     BrowserModule,

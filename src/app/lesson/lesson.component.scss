@@ -1,0 +1,71 @@
+@import "~assets/foundation-sites/variables";
+
+.box-header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 3em 4em 3em 4em;
+
+  & h3 {
+    font-family: $quicksand;
+    // font-weight: bold;
+    font-size: 56px;
+    line-height: 64px;
+    color: rgba(0,0,0,.84);
+    text-transform: capitalize;
+  }
+
+  & p {
+    font-family: $roboto;
+    font-size: $size-p;
+    color: $color-p;
+    line-height: 28px;
+    font-weight: 300;
+  }
+
+  & small {
+    font-family: $roboto;
+    color: $color-p;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &-right {
+    padding: 2em;
+  }
+}
+
+// body
+.container {
+  display: grid;
+  // grid-template-columns: 200px 1fr 200px;
+  margin: 100px auto;
+  padding-top: 100px;
+  grid-gap: 10px 50px;
+  grid-template-columns: 3fr 12fr 3fr;
+  background: white;
+  font-size: 1.25em;
+  color: rgba(0,0,0,.84);
+  font-weight: 300;
+}
+
+// extra
+.extra-title {
+  color: rgba(0,0,0,.5);
+  text-align: center;
+  text-transform: capitalize;
+  font-family: $quicksand;
+  font-size: $size-h4;
+}
+
+iframe {
+  width: 70%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3em auto;
+  border: 5px solid #e2e1e1;
+}

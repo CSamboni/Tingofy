@@ -1,6 +1,6 @@
 // Imports
 @import '../../../node_modules/foundation-sites/scss/foundation';
-@import '../../assets/foundation-sites/variables';
+@import "~assets/foundation-sites/variables";
 @include foundation-everything($prototype: true);
 
 
@@ -13,7 +13,7 @@ form {
 
   h4 {
     text-transform: uppercase;
-    font-family: $montserrat;
+    font-family: $quicksand;
     font-weight: bold;
     letter-spacing: 2px;
     font-size: 1.2em;
@@ -21,7 +21,7 @@ form {
 
   label {
     text-transform: uppercase;
-    font-family: $montserrat;
+    font-family: $quicksand;
     letter-spacing: 2px;
     font-size: .8em;
   }

@@ -4,6 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { FormControl } from '@angular/forms';
 import { Http } from '@angular/http';
+import { MatSnackBar } from '@angular/material';
+import { Router } from '@angular/router';
 import 'rxjs/Rx';
 
 @Component({
@@ -13,10 +15,15 @@ import 'rxjs/Rx';
 })
 export class AdminComponent {
   lesson: any = {};
-  constructor(private service: UsersService) {}
+  constructor(private service: UsersService, public snackbar: MatSnackBar, private router: Router) {}
   saveLesson() {
     this.lesson.id = Date.now();
     this.service.saveLesson(this.lesson);
     this.lesson = {};
+    this.openSnackBar('Created', 'Success');
+    this.router.navigate(['home']);
+  }
+  openSnackBar(message: string, action: string) {
+    this.snackbar.open(message, action, { duration: 2500 });
   }
 }

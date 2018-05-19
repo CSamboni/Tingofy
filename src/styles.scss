@@ -5,14 +5,14 @@
  * foundation.zurb.com
  * Licensed under MIT Open Source
  */
+ // Colors Palette
+@import 'assets/foundation-sites/variables';
+
 // Angular Material
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
 // Material Icons
 @import '../node_modules/material-design-icons/iconfont/material-icons.css';
-
-// Colors Palette
-@import 'assets/foundation-sites/variables';
 
 // Dependencies
 @import '../node_modules/foundation-sites/_vendor/normalize-scss/sass/normalize';
@@ -145,4 +145,40 @@
 
 body {
   background-color: whitesmoke;
+  font-family: $roboto;
+}
+
+// lesson
+.item__lesson h2, .item__lesson h3, .item__lesson h4 {
+  font-family: $quicksand;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.6em;
+  margin-top: 2em;
+}
+
+.item__lesson p {
+  font-family: $roboto;
+  font-weight: 300;
+}
+
+.item__lesson b,
+.item__lesson strong {
+  font-family: $quicksand;
+  font-weight: 700;
+  color: $color-gray;
+  text-decoration: underline wavy $color-yellow;
+}
+
+.item__lesson code {
+  font-family: $roboto;
+  font-weight: 400;
+  border: none;
+  color: $color-gray;
+}
+
+.item__lesson blockquote {
+  border-left: 1px solid $color-yellow;
+  margin: 2em 0;
+  background: #FAFAFA;
 }

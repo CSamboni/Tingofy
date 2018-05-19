@@ -1,3 +1,61 @@
+@import "~assets/foundation-sites/variables";
+
 .pad-3 {
   padding: 3em;
+}
+
+h4 {
+  text-transform: uppercase;
+  font-family: $quicksand;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 1.2em;
+}
+
+p, textarea, label {
+  font-family: $roboto;
+}
+
+button {
+  font-family: $roboto;
+  font-size: 1em;
+}
+
+.header {
+  border: 3px solid $color-purple;
+  padding: 1em;
+}
+
+.clarification {
+  border: 3px solid $pink;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.word {
+  border: 3px solid $color-teal;
+  padding: 1em;
+  margin: 1em;
+}
+
+.grid-x {
+  &:nth-child(odd) {
+    margin-left: 0 !important;
+    border: 1px solid $color-lightgray;
+  }
+
+  &:nth-child(even) {
+    margin-right: 0 !important;
+  }
+}
+
+.sentence {
+  border: 3px solid $color-blue;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.video-extra {
+  border: 3px solid $color-lightgray;
+  padding: 1em;
 }

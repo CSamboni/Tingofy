@@ -6,9 +6,10 @@
 
           <div class="cell" *ngFor="let lesson of lessons">
             <div class="card">
-              <img src="../../assets/images/learn.png">
+              <img src="{{ lesson.image }}" alt="Lesson Image">
               <div class="card-section">
                 <h4><a routerLink="/lesson/{{ lesson.id }}">{{ lesson.name }}</a></h4>
+                <small class="level">Beginner</small>
                 <p>{{ lesson.description }}</p>
               </div>
             </div>
